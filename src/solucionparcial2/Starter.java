@@ -70,7 +70,19 @@ public class Starter {
     public void loadData (Vet vet, ArrayList<Person> prs, File file) throws FileNotFoundException{
         Scanner in = new Scanner(file);
         while (in.hasNextLine()){
-            
+            String[] info = in.nextLine().split(" ");
+            String type = info[0];
+            switch (type) {
+                case "Dog":
+                    loadDog(info);
+                    break;
+                case "Cat":
+                    loadCat(info);
+                    break;
+                case "Hamster":
+                    loadHamster(info);
+                    break;
+            }
         }
     }
 //    + readPets (Vet v) : void
