@@ -41,7 +41,8 @@ public class Starter {
             System.out.println("1. Cargar informacion del archivo de texto");
             System.out.println("2. Guardar informacion al archivo de texto");
             System.out.println("3. Remover mascota con id");
-            System.out.println("4. Finalizar y listar las mascotas");
+            System.out.println("4. Lista mascotas por tipo");
+            System.out.println("5. Finalizar y listar las mascotas");
             
             String none;
             
@@ -59,8 +60,13 @@ public class Starter {
                     manageVet(vet, "Remover " + id);
                     break;
                 case 4:
+                    System.out.println("Seleccione que tipo");
+                    
+                    readPetsTipo();
+                case 5:
                     readPets (vet);
                     saveData (vet);
+                    break;
                     break;
             }
         }
@@ -84,6 +90,10 @@ public class Starter {
                     break;
             }
         }
+    }
+    
+    public void readPets (Vet vet) {
+        vet.showPets();
     }
 //    + readPets (Vet v) : void
 //+ manageVet (Vet v, String action) : void
