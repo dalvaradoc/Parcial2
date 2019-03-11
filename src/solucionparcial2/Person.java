@@ -26,14 +26,18 @@ public class Person {
     }
     
     public boolean addDog (String idpet, String namepet, String haircolorpet, String breed) throws IllegalArgumentException{
-        existId(idpet);
+        if (existId(idpet)){
+            return false;
+        }
         Dog dog = new Dog(breed, idpet, namepet, haircolorpet);
         dog.setOwner(this);
         return pets.add(dog);
     }
     
     public boolean addCat (String idpet, String namepet, String haircolorpet, boolean ishunter){
-        existId(idpet);
+        if (existId(idpet)){
+            return false;
+        }
         //Si el id ya existe manda error... if ()
         Cat cat = new Cat(ishunter, idpet, namepet, haircolorpet);
         cat.setOwner(this);
@@ -41,7 +45,9 @@ public class Person {
     }
     
     public boolean addHamster (String idpet, String namepet, String haircolorpet, double weight){
-        existId(idpet);
+        if (existId(idpet)){
+            return false;
+        }
         //Si el id ya existe manda error... if ()
         Hamster hamster = new Hamster(weight, idpet, namepet, haircolorpet);
         hamster.setOwner(this);

@@ -48,6 +48,7 @@ public class Vet {
     public boolean existsId (String id) {
         for (Pet p : pets){
             if (p.getId().equals(id)){
+                System.out.println(pets);
                 return true;
             }
         }
